@@ -7,4 +7,8 @@ client = commands.Bot(command_prefix = 'k-')
 async def on_ready():
     print('Bot is ready.')
 
-client.run('NzAzNDEyNjg1ODA2NTAxOTA4.Xsmpbg.bnq8QCFz6Z0OwsUHUKRizGhoSk8')
+@client.command()
+async def ping(ctx):
+    await ctx.send('Pong!')
+
+client.run('TOKEN PLACEHOLDER')
