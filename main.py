@@ -8,11 +8,11 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 
 now = datetime.now()
 
-year = int(now.year)
-month = int(now.month)
-day = int(now.day)
-hour = int(now.hour)
-minute = int(now.minute)
+currentYear = now.year
+currentMonth = now.month
+currentDay = now.day
+currentHour = now.hour
+currentMinute = now.minute
 
 #Set Summoning Command
 client = commands.Bot(command_prefix='-k ')
@@ -34,6 +34,7 @@ async def ping(ctx):
 
 @client.command()
 async def month(ctx):
-    await ctx.send('Comebacks for the month of ' + str(MONTHS[month]) + ': ')
+    await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
 
-client.run(os.environ['TOKEN_PLACEHOLDER'])
+#client.run(os.environ['TOKEN_PLACEHOLDER'])
+client.run('NzAzNDEyNjg1ODA2NTAxOTA4.XssVAw.2LWGVzTBq0aM9cc4yhUdSuSDIHg')
