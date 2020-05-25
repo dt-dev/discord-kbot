@@ -8,11 +8,11 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 
 now = datetime.now()
 
-year = now.year
-month = now.month
-day = now.day
-hour = now.hour
-minute = now.minute
+year = int(now.year)
+month = int(now.month)
+day = int(now.day)
+hour = int(now.hour)
+minute = int(now.minute)
 
 #Set Summoning Command
 client = commands.Bot(command_prefix='-k ')
