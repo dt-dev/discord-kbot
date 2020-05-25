@@ -1,6 +1,7 @@
 #Library Import
 import discord
 import os
+from data import *
 from discord.ext import commands
 
 #Set Summoning Command
