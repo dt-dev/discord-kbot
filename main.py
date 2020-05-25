@@ -1,5 +1,6 @@
 #Library Import
 import discord
+import os
 from discord.ext import commands
 
 #Set Summoning Command
@@ -14,7 +15,7 @@ commandDictionary = {
 #Set Bot Commands and Events
 @client.event
 async def on_ready():
-    print('Bot is ready.')
+    print('Bot is ready!')
 
 @client.command()
 async def ping(ctx):
@@ -28,4 +29,4 @@ async def khelp(ctx):
 async def month(ctx):
     await ctx.send('Comebacks for the month of ' + str(month) + ': ')
 
-client.run('TOKEN_PLACEHOLDER')
+client.run(os.environ['TOKEN_PLACEHOLDER'])
