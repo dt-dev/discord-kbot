@@ -4,7 +4,7 @@ import os
 from discord.ext import commands
 
 #Set Summoning Command
-client = commands.Bot(command_prefix = '-kbot')
+client = commands.Bot(command_prefix = '-k ')
 
 #Set permitted commands
 commandDictionary = {
