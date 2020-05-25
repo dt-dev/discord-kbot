@@ -1,26 +1,15 @@
 #Library Import
 import discord
 from discord.ext import commands
-from datetime import datetime
 
 #Set Summoning Command
-client = commands.Bot(command_prefix = 'k-')
-
-#Get Date
-now = datetime.now()
-month = now.strftime("%m")
+client = commands.Bot(command_prefix = '-kbot')
 
 #Set permitted commands
 commandDictionary = {
-    "k-khelp": "Displays this menu",
     "k-ping": "Checks bot's latency/message delay",
     "k-month": "Shows Current Month's Comebacks"
 }
-
-#Create User Friendly Command Dictionary
-dictionaryToString = ''
-for x in commandDictionary:
-    dictionaryToString += (("**"+x+"**").ljust(10) + "→" + commandDictionary[x]+"\n")
 
 #Set Bot Commands and Events
 @client.event
@@ -39,4 +28,4 @@ async def khelp(ctx):
 async def month(ctx):
     await ctx.send('Comebacks for the month of ' + str(month) + ': ')
 
-client.run('TOKEN PLACE HOLDER')
+client.run('TOKEN_PLACEHOLDER')
