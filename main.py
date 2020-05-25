@@ -36,5 +36,4 @@ async def ping(ctx):
 async def month(ctx):
     await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
 
-#client.run(os.environ['TOKEN_PLACEHOLDER'])
-client.run('NzAzNDEyNjg1ODA2NTAxOTA4.XssVAw.2LWGVzTBq0aM9cc4yhUdSuSDIHg')
+client.run(os.environ['TOKEN_PLACEHOLDER'])
