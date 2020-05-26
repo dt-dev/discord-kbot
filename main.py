@@ -30,7 +30,9 @@ async def ping(ctx):
 
 @client.command()
 async def month(ctx):
-    await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
+    #await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
+    ##Testing for June
+    await ctx.send('Comebacks for the month of June: ')
     await ctx.send(kdata.table)
 
 client.run(os.environ['TOKEN_PLACEHOLDER'])
