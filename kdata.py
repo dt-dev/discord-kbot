@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import requests
 from csv import writer
 
+global table
+
 ##Get Current Time
 # MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 #
@@ -24,10 +26,11 @@ posts = soup.find_all(class_='site-main')
 for post in posts:
     title = post.find(class_='entry-title').get_text()
     #body = post.find(class_='entry-content clear')
-    table = post.find(id='table_1')
+    table = str(post.find(id='table_1').get_text())
     print(title)
     #print(body)
     print(table)
+
 
 ##Test Web Scraping Site
 #https://dbkpop.com/tag/comebacks

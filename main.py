@@ -1,7 +1,9 @@
+import importlib
 import discord
 import os
 from discord.ext import commands
 from datetime import datetime
+import kdata
 
 #Get Dates
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -29,5 +31,6 @@ async def ping(ctx):
 @client.command()
 async def month(ctx):
     await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
+    await ctx.send(kdata.table)
 
 client.run(os.environ['TOKEN_PLACEHOLDER'])
