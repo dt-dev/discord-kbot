@@ -17,12 +17,6 @@ currentMinute = now.minute
 #Set Summoning Command
 client = commands.Bot(command_prefix='-k ')
 
-#Set Permitted Commands
-commandDictionary = {
-    "k-ping": "Checks bot's latency/message delay",
-    "k-month": "Shows Current Month's Comebacks"
-}
-
 #Set Bot Commands and Events
 @client.event
 async def on_ready():

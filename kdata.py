@@ -19,10 +19,15 @@ response = requests.get('https://dbkpop.com/2020/04/20/june-2020-k-pop-comebacks
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
-tables = soup.find_all(class_='wpDataTables wpDataTablesWrapper no-footer')
+posts = soup.find_all(class_='site-main')
 
-for table in tables:
+for post in posts:
+    title = post.find(class_='entry-title').get_text()
+    #body = post.find(class_='entry-content clear')
+    table = post.find(id='table_1')
+    print(title)
+    #print(body)
     print(table)
 
 ##Test Web Scraping Site
-#https://dbkpop.com/2020/04/20/june-2020-k-pop-comebacks-and-debuts
+#https://dbkpop.com/tag/comebacks
