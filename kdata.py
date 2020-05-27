@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 from csv import writer
 
+global paragraphString
 global table
 
 ##Get Current Time
@@ -35,12 +36,12 @@ paragraphs = body.find_all('p')
 #Convert List of Elements to List of Text Only
 n=0
 paragraphList = []
+paragraphString = ''
 for n in range(len(paragraphs)):
-    paragraphList.append(paragraphs[n].get_text())
+    paragraphList.append(paragraphs[n].get_text() + '\n')
     n += 1
-print(paragraphs)
-print(paragraphList)
-print(paragraphList[0])
+for n in range(len(paragraphList)):
+    paragraphString += paragraphList[n]
 
 ##Test Web Scraping Site
 #https://dbkpop.com/tag/comebacks
