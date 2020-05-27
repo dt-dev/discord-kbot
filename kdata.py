@@ -25,12 +25,22 @@ posts = soup.find_all(class_='site-main')
 
 for post in posts:
     title = post.find(class_='entry-title').get_text()
-    #body = post.find(class_='entry-content clear')
-    table = str(post.find(id='table_1').get_text())
+    body = post.find(class_='entry-content clear')
+    table = str(post.find(id='table_1'))
     print(title)
-    #print(body)
+    print(body)
     print(table)
+paragraphs = body.find_all('p')
 
+#Convert List of Elements to List of Text Only
+n=0
+paragraphList = []
+for n in range(len(paragraphs)):
+    paragraphList.append(paragraphs[n].get_text())
+    n += 1
+print(paragraphs)
+print(paragraphList)
+print(paragraphList[0])
 
 ##Test Web Scraping Site
 #https://dbkpop.com/tag/comebacks
