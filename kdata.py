@@ -28,9 +28,9 @@ for post in posts:
     title = post.find(class_='entry-title').get_text()
     body = post.find(class_='entry-content clear')
     table = str(post.find(id='table_1'))
-    print(title)
-    print(body)
-    print(table)
+    # print(title)
+    # print(body)
+    # print(table)
 paragraphs = body.find_all('p')
 
 #Convert List of Elements to List of Text Only

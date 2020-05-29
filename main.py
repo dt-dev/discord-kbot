@@ -33,7 +33,7 @@ async def month(ctx):
     paragraphEmbed = discord.Embed(
         title = str('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': '),
         description = kdata.paragraphString,
-        colour = discord.colour.default()
+        colour = discord.Color.default()
     )
 
     # paragraphEmbed.set_footer(text='This is a footer.')
@@ -42,7 +42,7 @@ async def month(ctx):
     paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
     #paragraphEmbed.add_field()
 
-    await client.say(embed=paragraphEmbed)
+    await ctx.say(embed=paragraphEmbed)
 
 # @client.command()
 # async def month(ctx):
