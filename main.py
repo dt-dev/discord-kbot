@@ -29,11 +29,21 @@ async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
 @client.command()
-async def month(ctx):
-    #await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
-    ##Testing for June
-    await ctx.send('Comebacks for the month of June: ')
-    await ctx.send(kdata.paragraphString)
-    await ctx.send(kdata.table)
+async def month():
+    embed = discord.Embed(
+        title = str('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': '),
+        description = kdata.paragraphString,
+        colour = discord.colour.white()
+    )
+
+    #embed.set_footer()
+
+# @client.command()
+# async def month(ctx):
+#     #await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
+#     ##Testing for June
+#     await ctx.send('Comebacks for the month of June: ')
+#     await ctx.send(kdata.paragraphString)
+#     await ctx.send(kdata.table)
 
 client.run(os.environ['TOKEN_PLACEHOLDER'])
