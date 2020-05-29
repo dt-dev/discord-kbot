@@ -42,7 +42,7 @@ async def month(ctx):
     paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
     #paragraphEmbed.add_field()
 
-    await ctx.say(embed=paragraphEmbed)
+    await ctx.send(embed=paragraphEmbed)
 
 # @client.command()
 # async def month(ctx):
