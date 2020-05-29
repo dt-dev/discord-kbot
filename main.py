@@ -30,13 +30,19 @@ async def ping(ctx):
 
 @client.command()
 async def month():
-    embed = discord.Embed(
+    paragraphEmbed = discord.Embed(
         title = str('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': '),
         description = kdata.paragraphString,
         colour = discord.colour.white()
     )
 
-    #embed.set_footer()
+    # paragraphEmbed.set_footer(text='This is a footer.')
+    # paragraphEmbed.set_image(url='')
+    # paragraphEmbed.set_thumbnail(url='')
+    paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
+    #paragraphEmbed.add_field()
+
+    await client.say(embed=paragraphEmbed)
 
 # @client.command()
 # async def month(ctx):
