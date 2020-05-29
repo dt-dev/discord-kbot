@@ -29,9 +29,9 @@ async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
 @client.command()
-async def month(ctx):
+async def month(ctx, *, requestedMonth):
     paragraphEmbed = discord.Embed(
-        title = str('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': '),
+        title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
         description = kdata.paragraphString,
         colour = discord.Color.default()
     )
