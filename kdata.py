@@ -38,7 +38,7 @@ n=0
 paragraphList = []
 paragraphString = ''
 for n in range(len(paragraphs)):
-    paragraphList.append(paragraphs[n].get_text() + '\n')
+    paragraphList.append(paragraphs[n].get_text() + '\n\n')
     n += 1
 for n in range(len(paragraphList)):
     paragraphString += paragraphList[n]
