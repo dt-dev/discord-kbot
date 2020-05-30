@@ -46,11 +46,11 @@ async def month(ctx, *, requestedMonth):
 
 @client.command()
 async def subscribe(ctx, *, name):
-    if name in kdata.subcriptions.read():
+    if name in kdata.subcriptions.readline():
         await ctx.send('You are already subscribed to ' + name)
     else:
         if name in kdata.stageNameList or kdata.fullNameList:
-            kdata.subcriptions.write(name+"\n")
+            kdata.subcriptions.write(name+'\n')
             await ctx.send('You are now subscribed to ' + name)
         else:
             await ctx.send('Could not find '+ name +' please check spelling')
