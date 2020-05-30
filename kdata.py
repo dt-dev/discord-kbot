@@ -63,7 +63,7 @@ for tr in table_rows:
         fullNameList.append(row[2])
 
 ##Subscriptions
-subcriptions = open('subscriptions.txt', 'w')
+subcriptions = open('subscriptions.txt', 'r+')
 
 
 ##Test Web Scraping Site
