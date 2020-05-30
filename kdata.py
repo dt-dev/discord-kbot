@@ -18,7 +18,7 @@ global table
 # minute = now.minute
 
 ##Web Scraping Beatiful Soup
-response = requests.get('https://dbkpop.com/2020/04/20/june-2020-k-pop-comebacks-and-debuts')
+response = requests.get('https://dbkpop.com/tag/comebacks')
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
