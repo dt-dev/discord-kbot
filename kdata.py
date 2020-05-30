@@ -43,5 +43,28 @@ for n in range(len(paragraphs)):
 for n in range(len(paragraphList)):
     paragraphString += paragraphList[n]
 
+##Tables of All Artists
+table = requests.get('https://dbkpop.com/db/all-k-pop-idols')
+
+tableSoup = BeautifulSoup(table.text, 'html.parser')
+
+table = tableSoup.table
+
+table_rows = table.find_all('tr')
+
+stageNameList = []
+fullNameList = []
+
+for tr in table_rows:
+    td = tr.find_all('td')
+    row = [i.text for i in td]
+    if len(row) >= 1:
+        stageNameList.append(row[1])
+        fullNameList.append(row[2])
+
+##Subscriptions
+subcriptions = open('subscriptions.txt', 'w')
+
+
 ##Test Web Scraping Site
 #https://dbkpop.com/tag/comebacks

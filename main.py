@@ -44,6 +44,17 @@ async def month(ctx, *, requestedMonth):
 
     await ctx.send(embed=paragraphEmbed)
 
+@client.command()
+async def subscribe(ctx, *, name):
+    if name in kdata.file.read():
+        await ctx.send('You are already subscribed to', name)
+    else:
+        if name in kdata.stageNameList or kdata.fullNameList:
+            kdata.file.write(name+"\n")
+            await ctx.send('You are now subscribed to', name)
+        else:
+            await ctx.send('Could not find '+ name +' please check spelling')
+
 # @client.command()
 # async def month(ctx):
 #     #await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
