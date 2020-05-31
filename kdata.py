@@ -35,7 +35,7 @@ october = current
 november = current
 december = current
 
-response = 'https://dbkpop.com/tag/comebacks'
+response = requests.get('https://dbkpop.com/tag/comebacks')
 
 soup = BeautifulSoup(response.text, 'html.parser')
 

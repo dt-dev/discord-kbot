@@ -25,6 +25,7 @@ client.remove_command('help')
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game('-k help'))
     print('Bot is ready!')
+
 async def help():
     helpEmbed = discord.Embed(
         title="K-Bot Help Menu: ",
@@ -35,7 +36,7 @@ async def help():
         """,
         colour=discord.Color.default()
     )
-    await client
+    await client.say(embed=helpEmbed)
 
 try:
     ##Test Ping
