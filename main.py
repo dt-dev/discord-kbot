@@ -31,7 +31,7 @@ try:
 
 
     @client.command()
-    async def month(*args):
+    async def month(ctx, *args):
         requestedMonth = ''
         for word in args:
             requestedMonth += word
@@ -56,7 +56,7 @@ try:
             paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
             #paragraphEmbed.add_field()
 
-            await client.say(embed=paragraphEmbed)
+            await ctx.send(embed=paragraphEmbed)
 
     ##Subscribe Feature
     @client.command()
