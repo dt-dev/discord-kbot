@@ -31,7 +31,12 @@ try:
 
     ##
     @client.command()
-    async def month(*, requestedMonth):
+    async def month(*args):
+        requestedMonth = ''
+        for word in args:
+            requestedMonth += word
+            requestedMonth += ' '
+
         if requestedMonth in MONTHS:
             # try:
                 # try:
