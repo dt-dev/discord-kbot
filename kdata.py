@@ -5,6 +5,7 @@ from csv import writer
 
 global paragraphString
 global table
+global response
 
 ##Get Current Time
 # MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -18,7 +19,22 @@ global table
 # minute = now.minute
 
 ##Web Scraping Beatiful Soup
-response = requests.get('https://dbkpop.com/tag/comebacks')
+current = requests.get('https://dbkpop.com/tag/comebacks')
+
+january = requests.get('https://dbkpop.com/2019/12/02/january-2020-k-pop-comebacks-and-debuts')
+february = requests.get('https://dbkpop.com/2019/12/26/february-2020-k-pop-comebacks-and-debuts')
+march = requests.get('https://dbkpop.com/2020/01/23/march-2020-k-pop-comebacks-and-debuts')
+april = requests.get('https://dbkpop.com/2020/02/04/april-2020-k-pop-comebacks-and-debuts')
+may = requests.get('https://dbkpop.com/2020/04/03/may-2020-k-pop-comebacks-and-debuts')
+june = requests.get('https://dbkpop.com/2020/04/20/june-2020-k-pop-comebacks-and-debuts')
+july = requests.get('https://dbkpop.com/2020/05/11/july-2020-k-pop-comebacks-and-debuts')
+august = current
+september = current
+october = current
+november = current
+december = current
+
+response = ''
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
