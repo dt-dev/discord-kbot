@@ -18,12 +18,25 @@ currentMinute = now.minute
 
 #Set Summoning Command
 client = commands.Bot(command_prefix='-k ')
+client.remove_command('help')
 
 #Set Bot Commands and Events
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game('-k help'))
     print('Bot is ready!')
+async def help():
+    helpEmbed = discord.Embed(
+        title="K-Bot Help Menu: ",
+        description="""
+        -k help                             Shows this help menu
+        -k month <month name or number>     Shows comebacks for month specified
+        -k subscribe <artist name>          Subscribes you for notifications on a groups comeback
+        """,
+        colour=discord.Color.default()
+    )
+    await client
+
 try:
     ##Test Ping
     @client.command()

@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 from csv import writer
 
+##Set Global Variables
 global paragraphString
 global table
 global response
@@ -34,7 +35,7 @@ october = current
 november = current
 december = current
 
-response = ''
+response = 'https://dbkpop.com/tag/comebacks'
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
