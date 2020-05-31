@@ -41,7 +41,7 @@ for n in range(len(paragraphs)):
     n += 1
 for n in range(len(paragraphList)):
     paragraphString += paragraphList[n]
-return paragraphString
+#return paragraphString
 
 ##Tables of All Artists
 table = requests.get('https://dbkpop.com/db/all-k-pop-idols')
