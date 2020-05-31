@@ -38,17 +38,19 @@ try:
             requestedMonth += ' '
 
         if requestedMonth in MONTHS:
-            # try:
-                # try:
-            int(requestedMonth)
-                # except:
-                #     MONTHS.index(requestedMonth)
-            # except:
-            paragraphEmbed = discord.Embed(
-                title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
-                description = kdata.paragraphString,
-                colour = discord.Color.default()
-            )
+            try:
+                try:
+                    int(requestedMonth)
+                except(TypeError):
+                    MONTHS.index(requestedMonth)
+                except:
+                    client.say("ERROR>>> Unknown Error, Please Contact the Developer")
+            except:
+                paragraphEmbed = discord.Embed(
+                    title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
+                    description = kdata.paragraphString,
+                    colour = discord.Color.default()
+                )
 
             # paragraphEmbed.set_footer(text='This is a footer.')
             # paragraphEmbed.set_image(url='')
