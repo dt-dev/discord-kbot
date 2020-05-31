@@ -33,12 +33,12 @@ try:
     @client.command()
     async def month(*, requestedMonth):
         if requestedMonth in MONTHS:
-            try:
+            # try:
                 # try:
-                    int(requestedMonth)
+                int(requestedMonth)
                 # except:
                 #     MONTHS.index(requestedMonth)
-            except:
+            # except:
                 paragraphEmbed = discord.Embed(
                     title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
                     description = kdata.paragraphString,
