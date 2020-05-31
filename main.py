@@ -7,6 +7,7 @@ import kdata
 
 #Get Dates
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+MONTHSBYNUMBER = [1,2,3,4,5,6,7,8,9,10,11,12]
 
 now = datetime.now()
 
@@ -29,45 +30,32 @@ try:
     async def ping(ctx):
         await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
-    ##Show Comebacks of the Month
+    ##This Months Comebacks
     @client.command()
     async def month(*args):
-        requestedMonth = ''
+        requestedMonth =''
         for word in args:
             requestedMonth += word
             requestedMonth += ' '
 
         if requestedMonth in MONTHS:
-            try:
-                int(requestedMonth)
-                paragraphEmbed = discord.Embed(
-                    title=str('Comebacks for the month of ' + MONTHS[int(requestedMonth) - 1] + ': '),
-                    description=kdata.paragraphString,
-                    colour=discord.Color.default()
-                )
-                # paragraphEmbed.set_footer(text='This is a footer.')
-                # paragraphEmbed.set_image(url='')
-                # paragraphEmbed.set_thumbnail(url='')
-                paragraphEmbed.set_author(name='dbkpop',
-                                          icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
-                # paragraphEmbed.add_field()
+            requestedMonth = requestedMonth
+        elif MONTHS.index(requestedMonth) in MONTHS:
+            requestedMonth = MONTHS[MONTHS.MONTHS.index(requestedMonth)+1]
+        else:
+            await  client.say("**UNKNOWN ERROR>>>** An unknown error occurred, please contact the developer")
+        paragraphEmbed = discord.Embed(
+            title=str('Comebacks for the month of ' + MONTHS[int(requestedMonth) - 1] + ': '),
+            description=kdata.paragraphString,
+            colour=discord.Color.default()
+        )
 
-                await client.say(embed=paragraphEmbed)
-
-            except:
-                requestedMonth = MONTHS.index(requestedMonth)+1
-                paragraphEmbed = discord.Embed(
-                    title=str('Comebacks for the month of ' + MONTHS[int(requestedMonth) - 1] + ': '),
-                    description=kdata.paragraphString,
-                    colour=discord.Color.default()
-                )
-                # paragraphEmbed.set_footer(text='This is a footer.')
-                # paragraphEmbed.set_image(url='')
-                # paragraphEmbed.set_thumbnail(url='')
-                paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
-                #paragraphEmbed.add_field()
-
-                await client.say(embed=paragraphEmbed)
+        # paragraphEmbed.set_footer(text='This is a footer.')
+        # paragraphEmbed.set_image(url='')
+        # paragraphEmbed.set_thumbnail(url='')
+        paragraphEmbed.set_author(name='dbkpop',
+                                  icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
+        # paragraphEmbed.add_field()
 
     ##Subscribe Feature
     @client.command()
