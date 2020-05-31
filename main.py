@@ -26,6 +26,7 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game('-k help'))
     print('Bot is ready!')
 
+#Make new help command
 async def help():
     helpEmbed = discord.Embed(
         title="K-Bot Help Menu: ",
