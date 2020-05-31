@@ -41,7 +41,7 @@ try:
             try:
                 try:
                     int(requestedMonth)
-                except(TypeError):
+                except TypeError:
                     MONTHS.index(requestedMonth)
                 except:
                     client.say("ERROR>>> Unknown Error, Please Contact the Developer")
