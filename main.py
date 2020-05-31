@@ -23,37 +23,48 @@ client = commands.Bot(command_prefix='-k ')
 @client.event
 async def on_ready():
     print('Bot is ready!')
+try:
+    ##Test Ping
+    @client.command()
+    async def ping(ctx):
+        await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
-@client.command()
-async def ping(ctx):
-    await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
+    ##
+    @client.command()
+    async def month(*, requestedMonth):
+        paragraphEmbed = discord.Embed(
+            title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
+            description = kdata.paragraphString,
+            colour = discord.Color.default()
+        )
 
-@client.command()
-async def month(ctx, *, requestedMonth):
-    paragraphEmbed = discord.Embed(
-        title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
-        description = kdata.paragraphString,
-        colour = discord.Color.default()
-    )
+        # paragraphEmbed.set_footer(text='This is a footer.')
+        # paragraphEmbed.set_image(url='')
+        # paragraphEmbed.set_thumbnail(url='')
+        paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
+        #paragraphEmbed.add_field()
 
-    # paragraphEmbed.set_footer(text='This is a footer.')
-    # paragraphEmbed.set_image(url='')
-    # paragraphEmbed.set_thumbnail(url='')
-    paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
-    #paragraphEmbed.add_field()
+        await client.say(embed=paragraphEmbed)
 
-    await ctx.send(embed=paragraphEmbed)
-
-@client.command()
-async def subscribe(ctx, *, name):
-    if name in kdata.subcriptions.readline():
-        await ctx.send('You are already subscribed to ' + name)
-    else:
-        if name in kdata.stageNameList or kdata.fullNameList:
-            kdata.subcriptions.write(name+'\n')
-            await ctx.send('You are now subscribed to ' + name)
+    ##Subscribe Feature
+    @client.command()
+    async def subscribe(*args):
+        name = ''
+        for word in args:
+            name += word
+            name += ' '
+        if name in kdata.subcriptions.readline():
+            await client.say('You are already subscribed to ' + name)
         else:
-            await ctx.send('Could not find '+ name +' please check spelling')
+            if name in kdata.stageNameList or kdata.fullNameList:
+                kdata.subcriptions.write(name+'\n')
+                await client.say('You are now subscribed to ' + name)
+            else:
+                await client.say('Could not find '+ name +' please check spelling')
+except:
+    @client.event
+    async def error():
+        await client.say("**ERROR>>>** An error occurred, please contact the developer")
 
 # @client.command()
 # async def month(ctx):
