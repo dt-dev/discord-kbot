@@ -29,7 +29,7 @@ try:
     async def ping(ctx):
         await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
-    ##
+    ##Show Comebacks of the Month
     @client.command()
     async def month(*args):
         requestedMonth = ''
