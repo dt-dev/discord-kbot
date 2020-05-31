@@ -7,7 +7,6 @@ import kdata
 
 #Get Dates
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-MONTHSBYNUMBER = [1,2,3,4,5,6,7,8,9,10,11,12]
 
 now = datetime.now()
 
@@ -30,48 +29,50 @@ try:
     async def ping(ctx):
         await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
-    ##This Months Comebacks
+
     @client.command()
     async def month(*args):
-        requestedMonth =''
+        requestedMonth = ''
         for word in args:
             requestedMonth += word
             requestedMonth += ' '
 
         if requestedMonth in MONTHS:
-            requestedMonth = requestedMonth
-        elif MONTHS.index(requestedMonth) in MONTHS:
-            requestedMonth = MONTHS[MONTHS.MONTHS.index(requestedMonth)+1]
-        else:
-            await  client.say("**UNKNOWN ERROR>>>** An unknown error occurred, please contact the developer")
-        paragraphEmbed = discord.Embed(
-            title=str('Comebacks for the month of ' + MONTHS[int(requestedMonth) - 1] + ': '),
-            description=kdata.paragraphString,
-            colour=discord.Color.default()
-        )
+            # try:
+                # try:
+            int(requestedMonth)
+                # except:
+                #     MONTHS.index(requestedMonth)
+            # except:
+            paragraphEmbed = discord.Embed(
+                title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
+                description = kdata.paragraphString,
+                colour = discord.Color.default()
+            )
 
-        # paragraphEmbed.set_footer(text='This is a footer.')
-        # paragraphEmbed.set_image(url='')
-        # paragraphEmbed.set_thumbnail(url='')
-        paragraphEmbed.set_author(name='dbkpop',
-                                  icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
-        # paragraphEmbed.add_field()
+            # paragraphEmbed.set_footer(text='This is a footer.')
+            # paragraphEmbed.set_image(url='')
+            # paragraphEmbed.set_thumbnail(url='')
+            paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
+            #paragraphEmbed.add_field()
+
+            await client.say(embed=paragraphEmbed)
 
     ##Subscribe Feature
     @client.command()
-    async def subscribe(*args):
+    async def subscribe(ctx, *args):
         name = ''
         for word in args:
             name += word
             name += ' '
         if name in kdata.subcriptions.readline():
-            await client.say('You are already subscribed to ' + name)
+            await ctx.send('You are already subscribed to ' + name)
         else:
             if name in kdata.stageNameList or kdata.fullNameList:
                 kdata.subcriptions.write(name+'\n')
-                await client.say('You are now subscribed to ' + name)
+                await ctx.send('You are now subscribed to ' + name)
             else:
-                await client.say('Could not find '+ name +' please check spelling')
+                await ctx.send('Could not find '+ name +' please check spelling')
 except:
     @client.event
     async def error():
