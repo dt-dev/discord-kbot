@@ -41,10 +41,9 @@ try:
             try:
                 try:
                     int(requestedMonth)
-                except TypeError:
-                    requestedMonth = MONTHS.index(requestedMonth)
                 except:
-                    client.say("ERROR>>> Unknown Error, Please Contact the Developer")
+                    requestedMonth = MONTHS.index(requestedMonth)
+                    # client.say("ERROR>>> Unknown Error, Please Contact the Developer")
             except:
                 paragraphEmbed = discord.Embed(
                     title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
