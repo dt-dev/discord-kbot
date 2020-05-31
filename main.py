@@ -31,12 +31,7 @@ try:
 
 
     @client.command()
-    async def month(ctx, *args):
-        requestedMonth = ''
-        for word in args:
-            requestedMonth += word
-            requestedMonth += ' '
-
+    async def month(ctx, requestedMonth):
         if requestedMonth in MONTHS:
             int(requestedMonth)
             paragraphEmbed = discord.Embed(
