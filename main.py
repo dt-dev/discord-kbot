@@ -30,21 +30,21 @@ try:
     async def ping(ctx):
         await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
-    @client.command()
-    async def month(ctx, requestedMonth):
-        if requestedMonth in MONTHS:
-            paragraphEmbed = discord.Embed(
-                title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
-                description = kdata.paragraphString,
-                colour = discord.Color.default()
-            )
 
+    @client.command()
+    async def month(ctx):
+        async def month(ctx, *, requestedMonth):
+            paragraphEmbed = discord.Embed(
+                title=str('Comebacks for the month of ' + MONTHS[int(requestedMonth) - 1] + ': '),
+                description=kdata.paragraphString,
+                colour=discord.Color.default()
+            )
             # paragraphEmbed.set_footer(text='This is a footer.')
             # paragraphEmbed.set_image(url='')
             # paragraphEmbed.set_thumbnail(url='')
-            paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
-            #paragraphEmbed.add_field()
-
+            paragraphEmbed.set_author(name='dbkpop',
+                                      icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
+            # paragraphEmbed.add_field()
             await ctx.send(embed=paragraphEmbed)
 
     ##Subscribe Feature
