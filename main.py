@@ -28,7 +28,7 @@ async def on_ready():
 
 #Make new help command
 @client.command()
-async def help():
+async def help(ctx):
     helpEmbed = discord.Embed(
         title="K-Bot Help Menu: ",
         description="""
@@ -38,7 +38,7 @@ async def help():
         """,
         colour=discord.Color.default()
     )
-    await client.say(embed=helpEmbed)
+    await ctx.send(embed=helpEmbed)
 
 try:
     ##Test Ping
