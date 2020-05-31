@@ -27,6 +27,7 @@ async def on_ready():
     print('Bot is ready!')
 
 #Make new help command
+@client.command()
 async def help():
     helpEmbed = discord.Embed(
         title="K-Bot Help Menu: ",
