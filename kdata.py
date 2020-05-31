@@ -18,30 +18,31 @@ global table
 # minute = now.minute
 
 ##Web Scraping Beatiful Soup
-response = requests.get('https://dbkpop.com/tag/comebacks')
+def monthFunction(month):
+    response = requests.get('https://dbkpop.com/tag/comebacks')
 
-soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text, 'html.parser')
 
-posts = soup.find_all(class_='site-main')
+    posts = soup.find_all(class_='site-main')
 
-for post in posts:
-    title = post.find(class_='entry-title').get_text()
-    body = post.find(class_='entry-content clear')
-    table = str(post.find(id='table_1'))
-    # print(title)
-    # print(body)
-    # print(table)
-paragraphs = body.find_all('p')
-
-#Convert List of Elements to List of Text Only
-n=0
-paragraphList = []
-paragraphString = ''
-for n in range(len(paragraphs)):
-    paragraphList.append(paragraphs[n].get_text() + '\n\n')
-    n += 1
-for n in range(len(paragraphList)):
-    paragraphString += paragraphList[n]
+    for post in posts:
+        title = post.find(class_='entry-title').get_text()
+        body = post.find(class_='entry-content clear')
+        table = str(post.find(id='table_1'))
+        # print(title)
+        # print(body)
+        # print(table)
+    paragraphs = body.find_all('p')
+    #Convert List of Elements to List of Text Only
+    n=0
+    paragraphList = []
+    paragraphString = ''
+    for n in range(len(paragraphs)):
+        paragraphList.append(paragraphs[n].get_text() + '\n\n')
+        n += 1
+    for n in range(len(paragraphList)):
+        paragraphString += paragraphList[n]
+    return paragraphString
 
 ##Tables of All Artists
 table = requests.get('https://dbkpop.com/db/all-k-pop-idols')
