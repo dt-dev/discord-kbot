@@ -22,6 +22,7 @@ client = commands.Bot(command_prefix='-k ')
 #Set Bot Commands and Events
 @client.event
 async def on_ready():
+    await client.change_presence(status=discord.Status.online, activity=discord.Game('-k help'))
     print('Bot is ready!')
 try:
     ##Test Ping
@@ -29,11 +30,9 @@ try:
     async def ping(ctx):
         await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
-
     @client.command()
     async def month(ctx, requestedMonth):
         if requestedMonth in MONTHS:
-            int(requestedMonth)
             paragraphEmbed = discord.Embed(
                 title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
                 description = kdata.paragraphString,
