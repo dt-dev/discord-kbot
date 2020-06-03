@@ -48,7 +48,7 @@ try:
 
     @client.command()
     async def month(ctx, *, requestedMonth):
-        Found = 0
+        found = 0
 
         kdata.getMonth(requestedMonth)
         paragraphEmbed = discord.Embed(
