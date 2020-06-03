@@ -48,8 +48,6 @@ try:
 
     @client.command()
     async def month(ctx, requestedMonth):
-        found = 0
-
         kdata.getMonth(requestedMonth)
         paragraphEmbed = discord.Embed(
             title=str('Comebacks for the month of ' + kdata.returnedMonth + ': '),
