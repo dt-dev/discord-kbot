@@ -47,7 +47,7 @@ try:
         await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
     @client.command()
-    async def month(ctx, *, requestedMonth):
+    async def month(ctx, requestedMonth):
         found = 0
 
         kdata.getMonth(requestedMonth)
