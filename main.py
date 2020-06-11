@@ -54,6 +54,7 @@ try:
 
         current = requests.get('https://dbkpop.com/2020/04/20/june-2020-k-pop-comebacks-and-debuts')
 
+        #
         response = ''
 
         if month == 1 or month == MONTHS[0]:
