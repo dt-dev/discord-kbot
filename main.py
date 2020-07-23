@@ -69,6 +69,7 @@ async def subscribe(ctx, *, name):
         else:
             await ctx.send('Could not find '+ name +' please check spelling')
 
+
 # @client.command()
 # async def month(ctx):
 #     #await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
