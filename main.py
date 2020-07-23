@@ -45,7 +45,7 @@ async def help(ctx):
 @client.command()
 async def month(ctx, *, requestedMonth):
     paragraphEmbed = discord.Embed(
-        title = str('Comebacks for the month of ' + MONTHS[int(requestedMonth)-1] + ': '),
+        title = str('Comebacks for the month of August: '),
         description = kdata.paragraphString,
         colour = discord.Color.default()
     )
@@ -77,4 +77,4 @@ async def subscribe(ctx, *, name):
 #     await ctx.send(kdata.paragraphString)
 #     await ctx.send(kdata.table)
 
-client.run(os.environ['TOKEN_PLACEHOLDER'])
+client.run('TOKEN_PLACEHOLDER')
