@@ -69,7 +69,6 @@ async def subscribe(ctx, *, name):
         else:
             await ctx.send('Could not find '+ name +' please check spelling')
 
-
 # @client.command()
 # async def month(ctx):
 #     #await ctx.send('Comebacks for the month of ' + MONTHS[currentMonth-1] + ': ')
@@ -78,4 +77,4 @@ async def subscribe(ctx, *, name):
 #     await ctx.send(kdata.paragraphString)
 #     await ctx.send(kdata.table)
 
-client.run('TOKEN_PLACEHOLDER')
+client.run(os.environ['TOKEN_PLACEHOLDER'])
