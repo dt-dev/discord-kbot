@@ -41,7 +41,7 @@ for n in range(len(paragraphs)):
     currentParagraphList.append(paragraphs[n].get_text() + '\n\n')
     n += 1
 for n in range(len(currentParagraphList)):
-    paragraphString += currentParagraphList[n]
+    currentParagraphString += currentParagraphList[n]
 currentParagraphString = currentParagraphString[0:2047]
 
 ##Web Scraping Beatiful Soup
@@ -68,7 +68,7 @@ for n in range(len(paragraphs)):
     nextParagraphList.append(paragraphs[n].get_text() + '\n\n')
     n += 1
 for n in range(len(nextParagraphList)):
-    paragraphString += nextParagraphList[n]
+    nextParagraphString += nextParagraphList[n]
 nextParagraphString = nextParagraphString[0:2047]
 
 ##Tables of All Artists
