@@ -35,7 +35,8 @@ async def help(ctx):
         title="K-Bot Help Menu: ",
         description="""
         -k help                             Shows this help menu
-        -k month <month name or number>     Shows comebacks for month specified
+        -k current                          Shows comebacks for the current month
+        -k next                             Shows comebacks for the next month
         -k subscribe <artist name>          Subscribes you for notifications on a groups comeback
         """,
         colour=discord.Color.purple()
@@ -45,9 +46,25 @@ async def help(ctx):
 @client.command()
 async def current(ctx):
     paragraphEmbed = discord.Embed(
-        title = str('Comebacks for the month of September: '),
-        description = kdata.paragraphString,
-        colour = discord.Color.default()
+        title = str('Comebacks for the month of October: '),
+        description = kdata.currentParagraphString,
+        colour = discord.Color.blue()
+    )
+
+    # paragraphEmbed.set_footer(text='This is a footer.')
+    # paragraphEmbed.set_image(url='')
+    # paragraphEmbed.set_thumbnail(url='')
+    paragraphEmbed.set_author(name='dbkpop',icon_url='https://dbkpop.com/wp-content/uploads/2018/04/dbkpopheader.png')
+    #paragraphEmbed.add_field()
+
+    await ctx.send(embed=paragraphEmbed)
+
+@client.command()
+async def next(ctx):
+    paragraphEmbed = discord.Embed(
+        title = str('Comebacks for the month of November: '),
+        description = kdata.nextParagraphString,
+        colour = discord.Color.blue()
     )
 
     # paragraphEmbed.set_footer(text='This is a footer.')
