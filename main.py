@@ -43,7 +43,7 @@ async def help(ctx):
     await ctx.send(embed=helpEmbed)
 
 @client.command()
-async def month(ctx, *, requestedMonth):
+async def current(ctx):
     paragraphEmbed = discord.Embed(
         title = str('Comebacks for the month of September: '),
         description = kdata.paragraphString,
