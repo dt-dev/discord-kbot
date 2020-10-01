@@ -62,7 +62,7 @@ async def current(ctx):
 @client.command()
 async def next(ctx):
     paragraphEmbed = discord.Embed(
-        title = str('Comebacks for the month of November: '),
+        title = str('Comebacks for the month of ' + str(MONTHS[currentMonth]) +': '),
         description = kdata.nextParagraphString,
         colour = discord.Color.dark_red()
     )
