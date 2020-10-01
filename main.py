@@ -48,7 +48,7 @@ async def current(ctx):
     paragraphEmbed = discord.Embed(
         title = str('Comebacks for the month of ' + str(MONTHS[currentMonth - 1]) +': '),
         description = kdata.currentParagraphString,
-        colour = discord.Color.dark_red()
+        colour = discord.Color.blue()
     )
 
     # paragraphEmbed.set_footer(text='This is a footer.')
@@ -64,7 +64,7 @@ async def next(ctx):
     paragraphEmbed = discord.Embed(
         title = str('Comebacks for the month of ' + str(MONTHS[currentMonth]) +': '),
         description = kdata.nextParagraphString,
-        colour = discord.Color.dark_red()
+        colour = discord.Color.blue()
     )
 
     # paragraphEmbed.set_footer(text='This is a footer.')
