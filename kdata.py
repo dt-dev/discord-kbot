@@ -18,7 +18,7 @@ global table
 # minute = now.minute
 
 ##Web Scraping Beatiful Soup
-currentResponse = requests.get('https://dbkpop.com/2020/09/01/october-2020-k-pop-comebacks-and-debuts')
+currentResponse = requests.get('https://dbkpop.com/2020/09/27/november-2020-k-pop-comebacks-and-debuts')
 
 currentSoup = BeautifulSoup(currentResponse.text, 'html.parser')
 
@@ -45,7 +45,7 @@ for n in range(len(currentParagraphList)):
 currentParagraphString = currentParagraphString[0:2047]
 
 ##Web Scraping Beatiful Soup
-nextResponse = requests.get('https://dbkpop.com/2020/09/27/november-2020-k-pop-comebacks-and-debuts')
+nextResponse = requests.get('https://dbkpop.com/2020/11/05/december-2020-k-pop-comebacks-and-debuts')
 
 nextSoup = BeautifulSoup(nextResponse.text, 'html.parser')
 
